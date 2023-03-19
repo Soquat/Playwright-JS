@@ -72,6 +72,7 @@ test.only('Child windows', async ({ browser }) => {
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
     const documentLink = page.locator("[href='https://rahulshettyacademy.com/documents-request']");
 
+    //destructering important here because newPage is of type Page, void! The click function returns a void which is useless!
     const [newPage] = await Promise.all([
         context.waitForEvent('page'),
         documentLink.click()

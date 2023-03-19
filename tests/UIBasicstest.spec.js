@@ -43,3 +43,25 @@ test('Page Playwright test', async ({ page }) => {
     await expect(page).toHaveTitle("Google");
 
 });
+
+test.only('UI Controls', async ({ page }) => {
+    await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+    const username = page.locator('#username');
+    const pw = page.locator("[type='password']");
+    const signIn = page.locator("#signInBtn");
+    const dropdown = page.locator("[data-style='btn-info'] ");
+    await username.fill("rahulshettyacademy");
+    await pw.fill("learning");
+    await dropdown.selectOption("consult")
+
+    await page.locator(".radiotextsty").last().click();
+    await page.locator("#okayBtn").click();
+    await expect(page.locator(".radiotextsty").last()).toBeChecked();
+    await page.locator("#terms").click();
+    await expect(page.locator("#terms")).toBeChecked();
+    await page.locator("#terms").uncheck();
+    expect(await page.locator("#terms").isChecked()).toBeFalsy();
+    await expect(page.locator("[href='https://rahulshettyacademy.com/documents-request']")).toHaveAttribute("class", "blinkingText");
+
+
+})

@@ -64,7 +64,7 @@ test('UI Controls', async ({ page }) => {
     await expect(page.locator("[href='https://rahulshettyacademy.com/documents-request']")).toHaveAttribute("class", "blinkingText");
 });
 
-test.only('Child windows', async ({ browser }) => {
+test('Child windows', async ({ browser }) => {
 
     const context = await browser.newContext();
     const page = await context.newPage();

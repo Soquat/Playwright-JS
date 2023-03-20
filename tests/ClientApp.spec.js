@@ -3,8 +3,9 @@ const { test, expect } = require('@playwright/test');
 test.only('Login test', async ({ page }) => {
     const productName = "zara coat 3";
     const products = page.locator(".card-body");
+    const email = "anshika@gmail.com"
     await page.goto("https://rahulshettyacademy.com/client");
-    await page.locator("#userEmail").fill("anshika@gmail.com");
+    await page.locator("#userEmail").fill(email);
     await page.locator("#userPassword").type("Iamking@000");
     await page.locator("[value='Login']").click();
 
@@ -39,8 +40,13 @@ test.only('Login test', async ({ page }) => {
         }
     }
 
+    await expect(page.locator(".user__name .input[type='text']")).toHaveValue(email);
+    await page.locator(".action__submit").click();
 
+    await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
 
+    const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
+    console.log(orderId);
     await page.pause();
 
 });

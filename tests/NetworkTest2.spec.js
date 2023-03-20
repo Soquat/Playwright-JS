@@ -15,7 +15,7 @@ test.beforeAll(async () => {
 });
 
 
-test.only('Login test', async ({ page }) => {
+test('Login test', async ({ page }) => {
     page.addInitScript(value => {
         window.localStorage.setItem("token", value);
     }, response.token);

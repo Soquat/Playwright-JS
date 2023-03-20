@@ -14,3 +14,17 @@ test('Popup validations', async ({ page }) => {
     const textCheck = await framesPage.locator(".text h2").textContent();
     console.log(textCheck.split(" ")[1]);
 })
+
+test("screenshot and visuel comparision", async ({ page }) => {
+    await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+    await expect(page.locator("#displayed-text")).toBeVisible();
+    let textbox = await page.locator("#hide-textbox");
+    await textbox.click();
+    await textbox.screenshot({ path: "screenshot.png" })
+    await expect(page.locator("#displayed-text")).toBeHidden();
+})
+
+test.only("visual", async ({ page }) => {
+    await page.goto("https://www.rediff.com/");
+    expect(await page.screenshot()).toMatchSnapshot("landing.png");
+})

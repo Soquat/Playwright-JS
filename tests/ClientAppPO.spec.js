@@ -5,7 +5,7 @@ const { customtest } = require("../utils/test-base");
 const dataSet = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
 
 for (const data of dataSet) {
-    test(`Login test with ${data.productname}`, async ({ page }) => {
+    test(`@Web Login test with ${data.productName}`, async ({ page }) => {
 
         const poManager = new POManager(page);
         const loginPage = poManager.getLoginPage();
@@ -47,7 +47,7 @@ for (const data of dataSet) {
     });
 }
 
-customtest(`Client App login`, async ({ page, testDataForOrder }) => {
+customtest(` Client App login`, async ({ page, testDataForOrder }) => {
 
     const poManager = new POManager(page);
     const loginPage = poManager.getLoginPage();

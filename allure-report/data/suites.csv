@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Tue Mar 21 09:52:32 CET 2023","Tue Mar 21 09:52:32 CET 2023","0","","ClientAppPO.spec.js","","","","@Web Login test with zara coat 4",""
+"skipped","Tue Mar 21 09:52:32 CET 2023","Tue Mar 21 09:52:32 CET 2023","1","","ClientAppPO.spec.js","","",""," Client App login",""

@@ -4,10 +4,7 @@ const { expect } = require('@playwright/test');
 const playwright = require('@playwright/test');
 
 Given('a login to Ecommerce app with {string} and {string}', { timeout: 100 * 1000 }, async function (username, password) {
-    const browser = await playwright.chromium.launch();
-    const context = await browser.newContext();
-    this.page = await context.newPage();
-    this.poManager = new POManager(this.page);
+    
     const loginPage = this.poManager.getLoginPage();
     const products = this.page.locator(".card-body");
     await loginPage.goTo();

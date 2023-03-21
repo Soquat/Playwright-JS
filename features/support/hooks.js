@@ -12,7 +12,7 @@ Before(async function () {
     this.poManager = new POManager(this.page);
 });
 
-After(function () {
+After({ tags: "@Regression" }, function () {
     console.log("I am last to execute");
 })
 
@@ -22,7 +22,7 @@ BeforeStep(function () {
 
 AfterStep(async function ({ result }) {
     console.log(result)
-    if (result.status === Status.FAILED) {
+    if (result.status === "Failed") {
         await this.page.screenshot({ path: "screenshot123.png" });
     }
 })

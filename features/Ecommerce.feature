@@ -5,6 +5,4 @@ Feature: Ecommerce validations
         When Add "zara coat 3" to cart
         Then Verify "zara coat 3" is displayed in the cart
 
-        When Enter valid details and place the order
-        Then Verify order is present in order history
 

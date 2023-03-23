@@ -29,6 +29,5 @@ test('Login test', async ({ page }) => {
     for (let i = 0; i < await rows.count(); i++) {
 
     }
-    await page.pause();
 
 });

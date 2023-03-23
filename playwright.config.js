@@ -4,6 +4,7 @@ const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './tests',
+  workers: 4,
 
   // timout for one test!
   timeout: 30 * 1000,
@@ -17,8 +18,9 @@ module.exports = defineConfig({
   use: {
     browserName: 'chromium',
     headless: false,
-    //screenshot: "on",
-    //trace: 'retain-on-failure',
+    screenshot: "only-on-failure",
+    trace: 'retain-on-failure',
+    video: 'retain-on-failure',
 
   },
 });

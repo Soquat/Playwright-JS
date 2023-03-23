@@ -87,6 +87,5 @@ test('Child windows', async ({ browser }) => {
 
     await username.type(domain);
 
-    //await page.pause();
 
 });

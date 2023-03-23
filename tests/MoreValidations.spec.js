@@ -8,7 +8,6 @@ test('Popup validations', async ({ page }) => {
     page.on('dialog', dialog => dialog.accept());
     await page.locator("#confirmbtn").click();
     await page.locator("#mousehover").hover();
-    page.pause();
     const framesPage = page.frameLocator("#courses-iframe");
     await framesPage.locator("li a[href*='lifetime-access']:visible").click();
     const textCheck = await framesPage.locator(".text h2").textContent();
@@ -24,7 +23,3 @@ test("screenshot and visuel comparision", async ({ page }) => {
     await expect(page.locator("#displayed-text")).toBeHidden();
 })
 
-test.only("visual", async ({ page }) => {
-    await page.goto("https://www.rediff.com/");
-    expect(await page.screenshot()).toMatchSnapshot("landing.png");
-})

@@ -11,7 +11,6 @@ test.beforeAll(async () => {
     const apiContext = await request.newContext();
     const apiUtils = new APIUtils(apiContext, loginPayload);
     response = await apiUtils.createOrder(orderPayload);
-    console.log("response");
 });
 
 
@@ -37,6 +36,5 @@ test('Login test', async ({ page }) => {
     );
     await page.locator("button[routerlink*='myorders']").click();
     console.log(await page.locator(".mt-4").textContent());
-    await page.pause();
 
 });

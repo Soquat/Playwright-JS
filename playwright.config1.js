@@ -5,7 +5,7 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './tests',
   //retries: 1,             //retry failure test 1 time!
-  //workers: 1,            // reduce workers. workers run parallel for each file. The tests in each file runs sequentiell
+  //workers: 8,            // reduce workers. workers run parallel for each file. The tests in each file runs sequentiell
                           // tests in FILE in PARALLEL MODE: test.describe.configure({mode:'parallel'}) <-- inside of file
   // timout for one test!
   timeout: 30 * 1000,

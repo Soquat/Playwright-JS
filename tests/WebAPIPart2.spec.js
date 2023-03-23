@@ -66,6 +66,5 @@ test('Login test', async () => {
 
     const orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
     console.log(orderId);
-    await page.pause();
 
 });

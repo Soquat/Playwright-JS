@@ -1,28 +1,28 @@
-// @ts-check
-const { defineConfig, devices } = require('@playwright/test');
+import { devices } from "@playwright/test";
 
 
-module.exports = defineConfig({
-  testDir: './tests',
-  workers: 4,
-
-  // timout for one test!
-  timeout: 30 * 1000,
-
-  // timeout for all assertions!
-  expect: {
-
-    timeout: 5000
+export default {
+  testDir: './dist/tests',
+  resolve: {
+    extensions: ['.js', '.ts'],
   },
-  reporter: 'html',
+  module: {
+    rules: [
+      {
+        test: /\.ts$/,
+        use: 'ts-loader'
+      }
+    ]
+  },
+  workers: 4,
+  devices: devices,
   use: {
     browserName: 'chromium',
-    headless: false,
-    screenshot: "only-on-failure",
-    trace: 'retain-on-failure',
-    video: 'retain-on-failure',
-
-  },
-});
+    headless: true,
+    viewport: { width: 1920, height: 1080 },
+    ignoreHTTPSErrors: true,
+    video: 'on-first-retry',
+  }
+};
 
 

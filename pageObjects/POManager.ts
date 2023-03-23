@@ -1,8 +1,12 @@
-const { DashBoardPage } = require("./DashBoardPage");
-const { LoginPage } = require("./LoginPage");
+import { Page } from "@playwright/test";
+import { DashBoardPage } from "./DashBoardPage";
+import { LoginPage } from "./LoginPage";
 
-class POManager {
-    constructor(page) {
+export class POManager {
+    page;
+    loginPage;
+    dashboardPage;
+    constructor(page:Page) {
         this.page = page;
         this.loginPage = new LoginPage(this.page);
         this.dashboardPage = new DashBoardPage(this.page);
@@ -17,7 +21,3 @@ class POManager {
         return this.dashboardPage;
     }
 }
-
-
-
-module.exports = { POManager };

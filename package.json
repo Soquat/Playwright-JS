@@ -1,6 +1,7 @@
 {
   "name": "playwright-js",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,7 +23,10 @@
   "homepage": "https://github.com/Soquat/Playwright-JS#readme",
   "devDependencies": {
     "@playwright/test": "^1.31.2",
-    "allure-playwright": "^2.1.0"
+    "@types/node": "^18.15.5",
+    "allure-playwright": "^2.1.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2"
   },
   "dependencies": {
     "@cucumber/cucumber": "^9.0.1"

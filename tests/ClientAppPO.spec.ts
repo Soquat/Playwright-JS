@@ -1,8 +1,11 @@
-const { test, expect } = require('@playwright/test');
-const { POManager } = require('../pageObjects/POManager');
-const { customtest } = require("../utils/test-base");
+import { test, expect } from '@playwright/test';
+import { POManager } from '../pageObjects/POManager';
+import customtest from '../utils/test-base';
+import dataImport from '../utils/placeorderTestData.json';
 
-const dataSet = JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
+
+
+const dataSet = JSON.parse(JSON.stringify(dataImport));
 
 for (const data of dataSet) {
     test(`@Web Login test with ${data.productName}`, async ({ page }) => {

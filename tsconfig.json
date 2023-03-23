@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "resolveJsonModule": true,
+        "target": "es2020",
+        "module": "CommonJS",
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "outDir": "dist",
+        "strict": true,
+        "esModuleInterop": true,
+    },
+    "include": [
+        "tests/**/*",
+        "pageObjects/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

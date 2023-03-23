@@ -1,6 +1,6 @@
 
-const { test, expect, request } = require("@playwright/test");
-let webContext;
+import { test, expect, request } from "@playwright/test";
+let webContext: any;
 
 
 test.beforeAll(async ({ browser }) => {
@@ -21,14 +21,14 @@ test.beforeAll(async ({ browser }) => {
 test('Login test', async () => {
     const productName = "zara coat 3";
     const email = "anshika@gmail.com";
-    
+
 
     const page = await webContext.newPage();
     const products = page.locator(".card-body");
 
 
     await page.goto("https://rahulshettyacademy.com/client");
-    
+
     const titles = await page.locator(".card-body b").allTextContents();
     console.log(titles)
     const count = await products.count();
